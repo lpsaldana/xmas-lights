@@ -1,0 +1,95 @@
+# Godot 4.x — generated cache and editor data
+.godot/
+
+# Godot 3.x — generated import cache
+.import/
+
+# Exported builds and packages
+/export.cfg
+/export_presets.cfg
+/build/
+/builds/
+/export/
+/exports/
+/dist/
+/release/
+*.pck
+*.zip
+*.apk
+*.aab
+*.ipa
+*.exe
+*.app/
+*.dmg
+*.deb
+*.rpm
+*.tar
+*.tar.gz
+
+# Godot logs and crash dumps
+*.log
+*.crash
+*.dmp
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+*.swp
+*.swo
+*.orig
+*.old
+
+# Operating system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.code-workspace
+*.sln
+*.csproj
+*.user
+*.userosscache
+*.suo
+*.pidb
+*.booproj
+*.svclog
+*.pdb
+*.mdb
+.vs/
+.gradle/
+bin/
+obj/
+
+# Mono / .NET generated files (if using C#)
+.mono/
+mono_crash.*.json
+
+# Profiling and coverage output
+coverage/
+.prof/
+*.prof
+*.gcda
+*.gcno
+
+# Python helper scripts / tooling caches, if used
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+
+# Node tooling, if used for project tools or web exports
+node_modules/
+.npm/

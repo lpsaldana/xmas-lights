@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dtcr2ebd86d0j"]
+
+[ext_resource type="Script" uid="uid://4i80g40ql446" path="res://scenes/light.gd" id="1_2e2gu"]
+[ext_resource type="PackedScene" uid="uid://cx4d47pttn67i" path="res://assets/foco_base.glb" id="1_24oxn"]
+[ext_resource type="Material" uid="uid://cfpafwtyqdjg" path="res://assets/number_mat.tres" id="3_ky1i4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2e2gu"]
+transparency = 1
+albedo_color = Color(0.8, 0.78039217, 0.8666667, 0.68235296)
+roughness = 0.15
+emission_enabled = true
+emission = Color(0, 0.7137255, 0.90588236, 1)
+emission_energy_multiplier = 0.0
+
+[node name="Light" type="Node3D" unique_id=1121768286]
+script = ExtResource("1_2e2gu")
+
+[node name="LampBase" parent="." unique_id=825441813 instance=ExtResource("1_24oxn")]
+
+[node name="Glass" parent="LampBase" index="0" unique_id=581746699]
+surface_material_override/0 = SubResource("StandardMaterial3D_2e2gu")
+
+[node name="Base1" parent="LampBase" index="1" unique_id=1902018907]
+visible = false
+surface_material_override/1 = ExtResource("3_ky1i4")
+
+[node name="Base2" parent="LampBase" index="2" unique_id=1253771406]
+visible = false
+surface_material_override/1 = ExtResource("3_ky1i4")
+
+[node name="Base3" parent="LampBase" index="3" unique_id=492160865]
+visible = false
+surface_material_override/1 = ExtResource("3_ky1i4")
+
+[node name="Base4" parent="LampBase" index="4" unique_id=911205114]
+visible = false
+surface_material_override/1 = ExtResource("3_ky1i4")
+
+[node name="Base5" parent="LampBase" index="5" unique_id=1418094568]
+visible = false
+surface_material_override/1 = ExtResource("3_ky1i4")
+
+[node name="Base6" parent="LampBase" index="6" unique_id=1244683330]
+visible = false
+surface_material_override/1 = ExtResource("3_ky1i4")
+
+[node name="Base7" parent="LampBase" index="7" unique_id=2010598479]
+visible = false
+surface_material_override/1 = ExtResource("3_ky1i4")
+
+[node name="Base8" parent="LampBase" index="8" unique_id=781157450]
+visible = false
+surface_material_override/1 = ExtResource("3_ky1i4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1149103641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.615284, -0.3889284)
+light_color = Color(2.695322e-06, 0.7141459, 0.9052974, 1)
+light_energy = 2.0
+shadow_enabled = true
+
+[editable path="LampBase"]
