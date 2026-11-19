@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cv5ewpgmaqbd"]
 
 [ext_resource type="PackedScene" uid="uid://dtcr2ebd86d0j" path="res://scenes/light.tscn" id="1_uwrxv"]
+[ext_resource type="Material" uid="uid://bd3fc4raxb7d4" path="res://assets/cable_mat.tres" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://b6rqmbpsvvn6t" path="res://scenes/connection_manager.gd" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://binl0wag2isr5" path="res://scenes/connection.tscn" id="3_lbhrr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -14,40 +17,60 @@ background_mode = 2
 sky = SubResource("Sky_yqjtg")
 glow_enabled = true
 
+[sub_resource type="BoxMesh" id="BoxMesh_lnu2h"]
+
 [node name="Game" type="Node3D" unique_id=1776554836]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1449096478]
 environment = SubResource("Environment_lnu2h")
 
-[node name="Uno" parent="." unique_id=971660958 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -10)
-
-[node name="Dos" parent="." unique_id=1121768286 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
-number = 2
-
-[node name="Cinco" parent="." unique_id=1021843738 instance=ExtResource("1_uwrxv")]
-number = 5
-
-[node name="Seis" parent="." unique_id=754057674 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-number = 6
-
-[node name="Cuatro" parent="." unique_id=1846125130 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-number = 4
-
-[node name="Siete" parent="." unique_id=1200106679 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
-number = 7
-
-[node name="Ocho" parent="." unique_id=805053673 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 10)
-number = 8
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=280556632]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.46310997, 20.262815, 0.6846523)
 
-[node name="Tres" parent="." unique_id=1552291828 instance=ExtResource("1_uwrxv")]
+[node name="ConnectionManager" type="Node" parent="." unique_id=22259672 node_paths=PackedStringArray("camera3D", "preview_connection", "connection_container")]
+script = ExtResource("2_yqjtg")
+camera3D = NodePath("../Camera3D")
+preview_connection = NodePath("../PreviewConnection")
+connection_material = ExtResource("2_lnu2h")
+connection_radius = 0.2
+connection_scene = ExtResource("3_lbhrr")
+connection_container = NodePath("../Connections")
+
+[node name="PreviewConnection" type="MeshInstance3D" parent="." unique_id=618829213]
+visible = false
+cast_shadow = 0
+mesh = SubResource("BoxMesh_lnu2h")
+
+[node name="Connections" type="Node3D" parent="." unique_id=141141748]
+
+[node name="Lights" type="Node" parent="." unique_id=1833776502]
+
+[node name="Uno" parent="Lights" unique_id=971660958 instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -10)
+
+[node name="Dos" parent="Lights" unique_id=1121768286 instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+number = 2
+
+[node name="Tres" parent="Lights" unique_id=1552291828 instance=ExtResource("1_uwrxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.232, 0, -10)
 number = 3
+
+[node name="Cuatro" parent="Lights" unique_id=1846125130 instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+number = 4
+
+[node name="Cinco" parent="Lights" unique_id=1021843738 instance=ExtResource("1_uwrxv")]
+number = 5
+
+[node name="Seis" parent="Lights" unique_id=754057674 instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+number = 6
+
+[node name="Siete" parent="Lights" unique_id=1200106679 instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+number = 7
+
+[node name="Ocho" parent="Lights" unique_id=805053673 instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 10)
+number = 8

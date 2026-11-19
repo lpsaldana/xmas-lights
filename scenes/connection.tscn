@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://binl0wag2isr5"]
+
+[ext_resource type="Script" uid="uid://b6wp8k1atcq7l" path="res://scenes/connection.gd" id="1_u7hla"]
+
+[node name="Connection" type="Node3D" unique_id=1181696342]
+script = ExtResource("1_u7hla")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=92670197]

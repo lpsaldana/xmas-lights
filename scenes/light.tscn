@@ -12,43 +12,46 @@ emission_enabled = true
 emission = Color(0, 0.7137255, 0.90588236, 1)
 emission_energy_multiplier = 0.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kdjey"]
+size = Vector3(3.4886627, 1, 3.4461517)
+
 [node name="Light" type="Node3D" unique_id=1121768286]
 script = ExtResource("1_2e2gu")
 
 [node name="LampBase" parent="." unique_id=825441813 instance=ExtResource("1_24oxn")]
 
-[node name="Glass" parent="LampBase" index="0" unique_id=581746699]
+[node name="Glass" parent="LampBase" index="0" unique_id=1406421608]
 surface_material_override/0 = SubResource("StandardMaterial3D_2e2gu")
 
-[node name="Base1" parent="LampBase" index="1" unique_id=1902018907]
+[node name="Base2" parent="LampBase" index="1" unique_id=15566162]
 visible = false
 surface_material_override/1 = ExtResource("3_ky1i4")
 
-[node name="Base2" parent="LampBase" index="2" unique_id=1253771406]
+[node name="Base3" parent="LampBase" index="2" unique_id=1911974413]
 visible = false
 surface_material_override/1 = ExtResource("3_ky1i4")
 
-[node name="Base3" parent="LampBase" index="3" unique_id=492160865]
+[node name="Base4" parent="LampBase" index="3" unique_id=1734878500]
 visible = false
 surface_material_override/1 = ExtResource("3_ky1i4")
 
-[node name="Base4" parent="LampBase" index="4" unique_id=911205114]
+[node name="Base5" parent="LampBase" index="4" unique_id=595871821]
 visible = false
 surface_material_override/1 = ExtResource("3_ky1i4")
 
-[node name="Base5" parent="LampBase" index="5" unique_id=1418094568]
+[node name="Base6" parent="LampBase" index="5" unique_id=1301634036]
 visible = false
 surface_material_override/1 = ExtResource("3_ky1i4")
 
-[node name="Base6" parent="LampBase" index="6" unique_id=1244683330]
+[node name="Base7" parent="LampBase" index="6" unique_id=1275416754]
 visible = false
 surface_material_override/1 = ExtResource("3_ky1i4")
 
-[node name="Base7" parent="LampBase" index="7" unique_id=2010598479]
+[node name="Base8" parent="LampBase" index="7" unique_id=954860514]
 visible = false
 surface_material_override/1 = ExtResource("3_ky1i4")
 
-[node name="Base8" parent="LampBase" index="8" unique_id=781157450]
+[node name="Base1" parent="LampBase" index="8" unique_id=1756803993]
 visible = false
 surface_material_override/1 = ExtResource("3_ky1i4")
 
@@ -57,5 +60,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.615284, -0.3889284)
 light_color = Color(2.695322e-06, 0.7141459, 0.9052974, 1)
 light_energy = 2.0
 shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=409145 groups=["connection_nodes"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1147766993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08223724, 0, -0.056907654)
+shape = SubResource("BoxShape3D_kdjey")
 
 [editable path="LampBase"]
