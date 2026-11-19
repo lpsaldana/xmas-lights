@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://bd3fc4raxb7d4" path="res://assets/cable_mat.tres" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://b6rqmbpsvvn6t" path="res://scenes/connection_manager.gd" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://binl0wag2isr5" path="res://scenes/connection.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://bqdh40ilxfyui" path="res://assets/board.glb" id="5_iywne"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uwrxv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,6 +17,11 @@ sky_material = SubResource("ProceduralSkyMaterial_uwrxv")
 background_mode = 2
 sky = SubResource("Sky_yqjtg")
 glow_enabled = true
+glow_levels/1 = 2.18
+glow_levels/2 = 2.13
+glow_levels/3 = 2.01
+glow_intensity = 0.8
+glow_bloom = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_lnu2h"]
 
@@ -46,31 +52,35 @@ mesh = SubResource("BoxMesh_lnu2h")
 [node name="Lights" type="Node" parent="." unique_id=1833776502]
 
 [node name="Uno" parent="Lights" unique_id=971660958 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.019924, 0, -10.490038)
 
 [node name="Dos" parent="Lights" unique_id=1121768286 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.653385)
 number = 2
 
 [node name="Tres" parent="Lights" unique_id=1552291828 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.232, 0, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0885754, 0, -10.653385)
 number = 3
 
 [node name="Cuatro" parent="Lights" unique_id=1846125130 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.061325, 0, 0.08167291)
 number = 4
 
 [node name="Cinco" parent="Lights" unique_id=1021843738 instance=ExtResource("1_uwrxv")]
+transform = Transform3D(0.9995922, 0.028555885, 0, -0.028555885, 0.9995922, 0, 0, 0, 1, 0, 0, 0)
 number = 5
 
 [node name="Seis" parent="Lights" unique_id=754057674 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0708237, 0, -0.08167267)
 number = 6
 
 [node name="Siete" parent="Lights" unique_id=1200106679 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055612564, 0, 10.611743)
 number = 7
 
 [node name="Ocho" parent="Lights" unique_id=805053673 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0199203, 0, 10.528324)
 number = 8
+
+[node name="board" parent="." unique_id=997566122 instance=ExtResource("5_iywne")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -2, 0)
